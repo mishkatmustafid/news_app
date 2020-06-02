@@ -1,5 +1,16 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp());
 }
+
+class MaterialApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body:
+        Text('Hello'),
+    );
+  }
+}
+
