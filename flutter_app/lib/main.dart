@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp());
+  runApp(MaterialApp(
+    home: MyApp(),
+  ));
 }
 
-class MaterialApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:
+      body: SafeArea(
+        child:
         Text('Hello'),
+      ),
     );
   }
 }
