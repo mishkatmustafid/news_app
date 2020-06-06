@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'news_card.dart';
+import 'paper.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -7,17 +9,35 @@ void main() {
   ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  List<Paper> papers = [
+    Paper(url: 'https://www.prothomalo.com/', title: 'Prothom Alo', logo: 'logo.jpg'),
+    Paper(url: 'https://www.jugantor.com/', title: 'Jugantor', logo: 'logo2.jpg'),
+    Paper(url: 'https://www.kalerkantho.com/', title: 'Kaler Kantho', logo: 'logo3.jpg'),
+    Paper(url: 'https://www..com/', title: 'Prothom Alo 2', logo: 'logo4.jpg')
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('This is title'),
+        title: Text('News'),
+        centerTitle: true,
+        backgroundColor: Colors.blueAccent,
       ),
-      body: SafeArea(
-        child:
-        Text('Hello'),
+      body: SingleChildScrollView(
+        child: Column(
+          children: papers.map((paper) => NewsCard(paper: paper,)).toList(),
+        ),
       ),
+
     );
   }
 }
