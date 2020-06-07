@@ -20,7 +20,6 @@ class _MyAppState extends State<MyApp> {
     Paper(url: 'https://www.prothomalo.com/', title: 'Prothom Alo', logo: 'logo.jpg'),
     Paper(url: 'https://www.jugantor.com/', title: 'Jugantor', logo: 'logo2.jpg'),
     Paper(url: 'https://www.kalerkantho.com/', title: 'Kaler Kantho', logo: 'logo3.jpg'),
-    Paper(url: 'https://www..com/', title: 'Prothom Alo 2', logo: 'logo4.jpg')
   ];
 
   @override
@@ -34,7 +33,12 @@ class _MyAppState extends State<MyApp> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: papers.map((paper) => NewsCard(paper: paper,)).toList(),
+          children: papers.map((paper) => NewsCard(
+            paper: paper,
+            button: (){
+              print('pressed');
+            },
+          )).toList(),
         ),
       ),
 

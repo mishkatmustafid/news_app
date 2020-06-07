@@ -5,20 +5,26 @@ import 'paper.dart';
 class NewsCard extends StatelessWidget {
 
   final Paper paper;
-  NewsCard({this.paper});
+  final Function button;
+  NewsCard({this.paper, this.button});
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
+      margin: EdgeInsets.fromLTRB(16, 16, 16, 16),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Center(
-              child: Image(
-                image: AssetImage('assets/${paper.logo}'),
+              child: GestureDetector(
+                onTap: (){
+                  print('${paper.title} has been pressed');
+                },
+                child: Image(
+                  image: AssetImage('assets/${paper.logo}'),
+                ),
               ),
             ),
             SizedBox(height: 10,),
